@@ -20,26 +20,24 @@ class Person {
 class Student extends Person {
     study() {
         console.log(`${this.name} is studying`);
-        alert(`${this.name} is studying`); // Show alert when studying
     }
 }
 
 class Teacher extends Person {
     teach() {
         console.log(`${this.name} is teaching`);
-        alert(`${this.name} is teaching`); // Show alert when teaching
     }
 }
 
-// Example Usage
+// Example usage
 const person = new Person("John", 25);
-document.getElementById("person-name").innerText = `Name: ${person.name}`;
-document.getElementById("person-age").innerText = `Age: ${person.age}`;
+console.log(person.name);  // Output: John
+
+person.age = 30;  // Using the setter to change the age
+console.log(person.age);  // Output: 30
 
 const student = new Student("Alice", 22);
-document.getElementById("student-name").innerText = `Name: ${student.name}`;
-document.getElementById("study-button").addEventListener("click", () => student.study());
+student.study();  // Output: Alice is studying
 
 const teacher = new Teacher("Bob", 40);
-document.getElementById("teacher-name").innerText = `Name: ${teacher.name}`;
-document.getElementById("teach-button").addEventListener("click", () => teacher.teach());
+teacher.teach();  // Output: Bob is teaching
